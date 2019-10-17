@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+<package name="demo1" extends="struts-default">
+    <action name="index" class="action.LoginAction">
+   		 <result name="success">/index.html</result>
+    </action>
+     <action name="login" class="action.LoginAction" method="login">
+   		 <result type="plaintext" name="success">
+   		 <param name="location">/file/success.txt</param> 
+    	 <param name="charSet">UTF-8</param>
+   		</result>
+   		 <result type="plaintext" name="error">
+   		 <param name="location"> /file/error.txt</param> 
+    	 <param name="charSet">UTF-8</param>
+   		</result>
+    </action>
+</package>
+
+</struts>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<title>登陆</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" href="layui/css/layui.css" media="all">
+		</head>
+	<style type="text/css">
+		body {
+			overflow: hidden;
+		}
+		.bg {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 90;
+			background-image: url(img/bg.jpg);
+			background-repeat: no-repeat;
+
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+		.login {
+			height: 215px;
+			width: 260px;
+			padding: 20px;
+			background-color: rgba(0, 0, 0, 0.5);
+			border-radius: 4px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin: -150px 0 0 -150px;
+			z-index: 99;
+		}
+
+		.login h1 {
+			text-align: center;
+			color: #fff;
+			font-size: 24px;
+			margin-bottom: 20px;
+		}
+
+		.form_code {
+			position: relative;
+		}
+
+		.form_code .code {
+			position: absolute;
+			right: 0;
+			top: 1px;
+			cursor: pointer;
+		}
+
+		.login_btn {
+			width: 100%;
+		}
+	</style>
+	<body>
+		<div class="bg">
+		</div>
+		<div class="login">
+			<h1>登陆</h1>
+			<form class="layui-form">
+				<div class="layui-form-item">
+					<input class="layui-input" name="username" lay-verType="tips" placeholder="用户名" lay-verify="required" type="text"
+					 autocomplete="off">
+				</div>
+				<div class="layui-form-item">
+					<input class="layui-input" name="password" lay-verType="tips" placeholder="密码" lay-verify="required" type="password"
+					 autocomplete="off">
+				</div>
+				<button class="layui-btn login_btn" lay-submit="" lay-filter="login">登录</button>
+			</form>
+		</div>
+		<script src="layui/layui.js"></script>
+		<script src="js/jquery.js"></script>
+		<script type="text/javascript">
+			   layui.use('form',function(){
+					var form = layui.form;
+					form.on('submit(login)',function(data){
+						   $.post("login",data.field,function(res){
+							   if(res == "success"){
+								   location.href = "./html/home.html";
+							   }else{
+								   layer.msg("账号或密码错误,请重试！",{icon:1});
+							   }
+						   })						 
+						  return false;
+					});
+				})
+		</script>
+	</body>
+</html>

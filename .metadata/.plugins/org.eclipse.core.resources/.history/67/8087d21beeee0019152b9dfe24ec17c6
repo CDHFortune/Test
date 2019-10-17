@@ -1,0 +1,27 @@
+public class LoginAction extends ActionSupport {
+    private String username;
+    private String password;
+    public String getUsername(){
+        return this.username;
+    }
+    public void setUsername(String s){
+        this.username = s;
+    }
+    public String getPassword(){
+        return this.password;
+    }
+    public void setPassword(String s){
+        this.password = s;
+    }
+
+    public String execute() throws Exception{
+
+        if(getUsername().equals("walker")&&getPassword().equals("yam")){
+            return SUCCESS;
+        }
+        return ERROR;
+    }
+}
+————————————————
+版权声明：本文为CSDN博主「Single_YAM」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_35326718/article/details/70943604

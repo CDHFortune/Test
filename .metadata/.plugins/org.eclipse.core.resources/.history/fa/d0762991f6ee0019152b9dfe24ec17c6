@@ -1,0 +1,12 @@
+package action;
+
+public class LoginAction extends ActionSupport {
+	
+	public String index() {
+		return "success";
+	}
+	public String login() {
+		if()
+	}
+
+}

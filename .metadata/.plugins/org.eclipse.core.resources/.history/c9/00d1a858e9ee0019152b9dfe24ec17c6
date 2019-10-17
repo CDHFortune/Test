@@ -1,0 +1,10 @@
+package com.action;
+
+
+public class LoginAction{
+
+	public 	String execute() {
+		System.out.println("÷¥––¡À");
+		return "success";
+	}
+}

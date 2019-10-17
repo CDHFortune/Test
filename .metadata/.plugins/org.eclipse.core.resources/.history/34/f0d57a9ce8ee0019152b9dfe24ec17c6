@@ -1,0 +1,10 @@
+package com.action;
+
+
+public class LoginAction{
+	@Override
+	public 	String execute() throws Exception{
+		System.out.println("÷¥––¡À");
+		return "success";
+	}
+}

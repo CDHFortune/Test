@@ -1,0 +1,26 @@
+package com.action;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class LoginAction extends ActionSupport {
+    private String username;
+    private String password;
+    public String getUsername(){
+        return this.username;
+    }
+    public void setUsername(String s){
+        this.username = s;
+    }
+    public String getPassword(){
+        return this.password;
+    }
+    public void setPassword(String s){
+        this.password = s;
+    }
+
+    public String execute() throws Exception{
+
+
+        return ERROR;
+    }
+}
