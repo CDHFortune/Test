@@ -12,7 +12,7 @@ public class LoginAction extends ActionSupport {
 	public InputStream getInputStream() {
 		return inputStream;
 	}
-	//测试文件
+	//测试文件杀杀杀
 	public void setInputStream(InputStream inputStream) {
 		this.inputStream = inputStream;
 	}
